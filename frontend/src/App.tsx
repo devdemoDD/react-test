@@ -7,7 +7,7 @@ function App() {
   const divRef = useRef<HTMLSpanElement>(null);
 
   const getData = (elem: HTMLSpanElement) => {
-    fetch('http://localhost:4000/api/test')
+    fetch(`${import.meta.env.VITE_API_SERVER}/api/test`)
       .then((res) => res.json())
       .then((res) => {
         elem.textContent = res.message;
